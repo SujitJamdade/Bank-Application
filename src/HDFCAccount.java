@@ -69,7 +69,7 @@ public class HDFCAccount implements BankApplicationInterface {
     @Override
     public String fetchBalance(String Password) {
 
-        if(this.passord.equals(Password)){
+        if(this.password.equals(Password)){
             return "Your balance is : " + this.balance;
         }
         return "Incorrect Password";
@@ -111,5 +111,17 @@ public class HDFCAccount implements BankApplicationInterface {
     public double calculateIntrest(int year) {
 //      Interest as per the bank
         return (this.balance*year*rateOfInterest)/100.0;
+    }
+
+    @Override
+    public String toString() {
+        return "HDFCAccount{" +
+                "name='" + name + '\'' +
+                ", accountNo='" + accountNo + '\'' +
+                ", password='" + password + '\'' +
+                ", balance=" + balance +
+                ", rateOfInterest=" + rateOfInterest +
+                ", IFSCCode='" + IFSCCode + '\'' +
+                '}';
     }
 }
